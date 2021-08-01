@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>http://devpoint.site90.com/</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>date</key>
+				<string>2015-12-01</string>
+				<key>title</key>
+				<string>Android</string>
+				<key>category</key>
+				<string>http://devpoint.site90.com/category/android/</string>
+			</dict>
+			<dict>
+				<key>date</key>
+				<string>2015-12-02</string>
+				<key>title</key>
+				<string>Java</string>
+				<key>category</key>
+				<string>http://devpoint.site90.com/category/java/</string>
+			</dict>
+			<dict>
+				<key>date</key>
+				<string>2015-12-03</string>
+				<key>title</key>
+				<string>Mac-Os</string>
+				<key>category</key>
+				<string>http://devpoint.site90.com/category/mac-osx/</string>
+			</dict>
+			<dict>
+				<key>date</key>
+				<string>2015-05-15</string>
+				<key>title</key>
+				<string>regex</string>
+				<key>category</key>
+				<string>http://devpoint.site90.com/category/regex/</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>swift.org</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>date</key>
+				<string>2015-12-03</string>
+				<key>title</key>
+				<string>The Swift Linux Port</string>
+				<key>category</key>
+				<string>https://swift.org/blog/swift-linux-port/</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>The Swift.org Blog</string>
+				<key>date</key>
+				<string>2015-12-03</string>
+				<key>category</key>
+				<string>https://swift.org/blog/welcome/</string>
+			</dict>
+			<dict>
+				<key>date</key>
+				<string>2015-12-03</string>
+				<key>title</key>
+				<string>Swift 3 API Design Guidelines</string>
+				<key>category</key>
+				<string>https://swift.org/blog/swift-3-api-design/</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

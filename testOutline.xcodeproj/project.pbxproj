@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0309F60E26B3E68800341330 /* MainWindowControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309F60D26B3E68800341330 /* MainWindowControllerDataSource.swift */; };
+		0309F61026B3E85A00341330 /* MainWindowControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309F60F26B3E85A00341330 /* MainWindowControllerDelegate.swift */; };
 		0388572426ADCBBB0011505D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388572326ADCBBB0011505D /* AppDelegate.swift */; };
 		0388572626ADCBBE0011505D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0388572526ADCBBE0011505D /* Assets.xcassets */; };
 		0388572926ADCBBE0011505D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0388572726ADCBBE0011505D /* MainMenu.xib */; };
 		0388573526ADCBBE0011505D /* testOutlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388573426ADCBBE0011505D /* testOutlineTests.swift */; };
 		0388574026ADCBBE0011505D /* testOutlineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388573F26ADCBBE0011505D /* testOutlineUITests.swift */; };
+		0388574F26ADCC0E0011505D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388574D26ADCC0E0011505D /* MainWindowController.swift */; };
+		0388575026ADCC0E0011505D /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0388574E26ADCC0E0011505D /* MainWindowController.xib */; };
+		0388575226ADCE810011505D /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0388575126ADCE810011505D /* Feeds.plist */; };
+		0388575426ADCE9B0011505D /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388575326ADCE9B0011505D /* Feed.swift */; };
+		0388575826ADE9630011505D /* NSUserInterfaceItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388575726ADE9620011505D /* NSUserInterfaceItemIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0309F60D26B3E68800341330 /* MainWindowControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowControllerDataSource.swift; sourceTree = "<group>"; };
+		0309F60F26B3E85A00341330 /* MainWindowControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowControllerDelegate.swift; sourceTree = "<group>"; };
 		0388572026ADCBBB0011505D /* testOutline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testOutline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0388572326ADCBBB0011505D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0388572526ADCBBE0011505D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +53,11 @@
 		0388573B26ADCBBE0011505D /* testOutlineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testOutlineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0388573F26ADCBBE0011505D /* testOutlineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testOutlineUITests.swift; sourceTree = "<group>"; };
 		0388574126ADCBBE0011505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0388574D26ADCC0E0011505D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		0388574E26ADCC0E0011505D /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		0388575126ADCE810011505D /* Feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
+		0388575326ADCE9B0011505D /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		0388575726ADE9620011505D /* NSUserInterfaceItemIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserInterfaceItemIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +111,15 @@
 				0388572326ADCBBB0011505D /* AppDelegate.swift */,
 				0388572526ADCBBE0011505D /* Assets.xcassets */,
 				0388572726ADCBBE0011505D /* MainMenu.xib */,
+				0388575126ADCE810011505D /* Feeds.plist */,
 				0388572A26ADCBBE0011505D /* Info.plist */,
+				0388575326ADCE9B0011505D /* Feed.swift */,
 				0388572B26ADCBBE0011505D /* testOutline.entitlements */,
+				0388575726ADE9620011505D /* NSUserInterfaceItemIdentifier.swift */,
+				0388574D26ADCC0E0011505D /* MainWindowController.swift */,
+				0388574E26ADCC0E0011505D /* MainWindowController.xib */,
+				0309F60D26B3E68800341330 /* MainWindowControllerDataSource.swift */,
+				0309F60F26B3E85A00341330 /* MainWindowControllerDelegate.swift */,
 			);
 			path = testOutline;
 			sourceTree = "<group>";
@@ -224,7 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0388575226ADCE810011505D /* Feeds.plist in Resources */,
 				0388572626ADCBBE0011505D /* Assets.xcassets in Resources */,
+				0388575026ADCC0E0011505D /* MainWindowController.xib in Resources */,
 				0388572926ADCBBE0011505D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0388574F26ADCC0E0011505D /* MainWindowController.swift in Sources */,
+				0309F60E26B3E68800341330 /* MainWindowControllerDataSource.swift in Sources */,
+				0388575426ADCE9B0011505D /* Feed.swift in Sources */,
+				0388575826ADE9630011505D /* NSUserInterfaceItemIdentifier.swift in Sources */,
 				0388572426ADCBBB0011505D /* AppDelegate.swift in Sources */,
+				0309F61026B3E85A00341330 /* MainWindowControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
