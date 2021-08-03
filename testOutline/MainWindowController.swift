@@ -10,7 +10,7 @@ import Cocoa
 class MainWindowController: NSWindowController {
     
     enum ListeOperationsDisplayProperty: String {
-        case title
+        case mode
         case date
         case category
     }
@@ -30,7 +30,13 @@ class MainWindowController: NSWindowController {
         dateFormatter.dateStyle = .short
         
         feedList("Feeds")
+
+        self.outlineView.autosaveTableColumns = false
+        self.outlineView.autosaveExpandedItems = false
         outlineView.reloadData()
+        self.outlineView.autosaveExpandedItems = true
+        
+        reloadData(false, true)
     }
     
     func feedList(_ fileName: String) {
@@ -40,6 +46,37 @@ class MainWindowController: NSWindowController {
         feeds = try! data.decoded()
     }
     
+    func reloadData(_ expand: Bool = false,_ auto: Bool = false) {
+        
+        DispatchQueue.main.async {
+            self.outlineView.autosaveExpandedItems = false
+            self.outlineView.reloadData()
+            self.outlineView.autosaveExpandedItems = auto
+
+            if expand == true {
+                self.outlineView.expandItem(nil, expandChildren: true)
+                return
+            }
+            
+            if self.outlineView.autosaveExpandedItems,
+               let autosaveName = self.outlineView.autosaveName,
+               let persistentObjects = UserDefaults.standard.array(forKey: "NSOutlineView Items \(autosaveName)"),
+               let itemIds = persistentObjects as? [String] {
+                let items = itemIds.sorted{ $0 < $1}
+                items.forEach {
+                    let item = self.outlineView.dataSource?.outlineView?(self.outlineView, itemForPersistentObject: $0)
+                    if let item = item as? Datas {
+                        self.outlineView.expandItem(item)
+                    }
+//                    if let item = item as? GroupedMonthOperations {
+//                        self.outlineListView.expandItem(item)
+//                    }
+                }
+            }
+        }
+    }
+
+    
     override func deleteBackward(_ sender: Any?) {
         //1
         let selectedRow = outlineView.selectedRow
@@ -47,26 +84,18 @@ class MainWindowController: NSWindowController {
             return
         }
         
-        //2
         outlineView.beginUpdates()
-        //3
         if let item = outlineView.item(atRow: selectedRow) {
             
-            //4
             if let item = item as? Datas {
-                //5
                 if let index = self.feeds.firstIndex( where: {$0.name == item.name} ) {
-                    //6
                     self.feeds.remove(at: index)
-                    //7
                     outlineView.removeItems(at: IndexSet(integer: selectedRow), inParent: nil, withAnimation: .slideLeft)
                 }
             } else if let item = item as? Children {
-                //8
                 for feed in self.feeds {
-                    var feed = feed
-                    //9
-                    if let index = feed.children.firstIndex( where: {$0.title == item.title} ) {
+                    let feed = feed
+                    if let index = feed.children.firstIndex( where: {$0.mode == item.mode} ) {
                         feed.children.remove(at: index)
                         outlineView.removeItems(at: IndexSet(integer: index), inParent: feed, withAnimation: .slideLeft)
                     }
@@ -75,6 +104,8 @@ class MainWindowController: NSWindowController {
         }
         outlineView.endUpdates()
     }
+    
+    
 }
 
 // MARK: - KSHeaderCellView

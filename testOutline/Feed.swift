@@ -8,16 +8,26 @@
 
 import Cocoa
 
-struct Datas : Codable {
-    var name: String
-    var children: [Children]
+class Datas        : Codable {
+    var name       : String
+    var amount     : String
+    var identifier : String
+    var children   : [Children]
 }
 
-struct Children : Codable {
-    var date: String
-    var title: String
-    var category: String
+class Children     : Codable {
+    var date       : String
+    var mode       : String
+    var comment    : String
+    var category   : String
+    var identifier : String
 }
+
+class Split        : Codable {
+    var rubric     : String
+    var amount     : String
+}
+
 
 extension Data {
     func decoded<T: Decodable>() throws -> T {

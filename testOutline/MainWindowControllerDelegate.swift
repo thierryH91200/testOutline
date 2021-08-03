@@ -23,20 +23,24 @@ extension MainWindowController: NSOutlineViewDelegate {
         }
         return nil
     }
-
+    
     func trackingFolder(_ outlineView: NSOutlineView, folderItem: Datas) -> NSView? {
         
         var cellView: KSHeaderCellView?
         
         cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? KSHeaderCellView
+        //        cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? NSTableCellView
+        print (  folderItem.name)
         cellView?.textField?.stringValue = folderItem.name
         cellView?.textField?.textColor = .labelColor
-        cellView?.fillColor = .blue
-        cellView?.textField?.sizeToFit()
+        cellView?.textField?.font = NSFont.boldSystemFont(ofSize: 14.0)
+        cellView?.fillColor = .orange
 
+        //        cellView?.textField?.sizeToFit()
+        
         return cellView
     }
-        
+    
     
     func trackingTransaction(_ outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: Children) -> NSView? {
         
@@ -45,20 +49,20 @@ extension MainWindowController: NSOutlineViewDelegate {
         let identifier = tableColumn!.identifier
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
         
-        if identifier.rawValue == "title"
-        {
-//            cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? NSTableCellView
-        } else
+        if identifier.rawValue == "mode"
         {
             cellView = outlineView.makeView(withIdentifier: .FeedItemCell, owner: self) as? NSTableCellView
+        } else
+        {
+            cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? NSTableCellView
         }
         let textField = (cellView?.textField!)!
         textField.stringValue = ""
         
         switch propertyEnum
         {
-        case .title:
-            textField.stringValue = item.date
+        case .mode:
+            textField.stringValue = item.mode
             textField.sizeToFit()
             
         case .date:
@@ -79,7 +83,12 @@ extension MainWindowController: NSOutlineViewDelegate {
             return 30.0
         }
     }
-        
+    
+//    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
+//        return MyNSTableRowView()
+//    }
+
+    
     // Returns a Boolean that indicates whether a given row should be drawn in the “group row” style.
     public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
     {
@@ -88,63 +97,35 @@ extension MainWindowController: NSOutlineViewDelegate {
         }
         return false
     }
-
-//    func outlineViewSelectionDidChange(_ notification: Notification) {
-//
-//        guard let outlineView = notification.object as? NSOutlineView else {
-//            return
-//        }
-//
-//        let selectedIndex = outlineView.selectedRow
-//
-//        if let feedItem = outlineView.item(atRow: selectedIndex) as? Children {
-//            let url = URL(string: feedItem.category)
-//            if url != nil {
-//                print("self.webView.mainFrame.load(URLRequest(url: url))")
-//            }
-//        }
-//    }
     
-//    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
-//        return MyNSTableRowView()
-//    }
+    // MARK: -
+    class MyNSTableRowView: NSTableRowView {
+        
+        static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
     
-//    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
-//        
-//        return item
-//    }
-}
-
-class MyNSTableRowView: NSTableRowView {
-    
-    
-    static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
-
-    
-    init()
-    {
-        super.init(frame: .zero)
-        isTargetForDropOperation = false
-        draggingDestinationFeedbackStyle = .none
-        selectionHighlightStyle = .none
-    }
-    
-    required init?(coder decoder: NSCoder) { nil }
-
-    
-    override func drawBackground(in dirtyRect: NSRect) {} // this avoids a visual bug
-    override func drawSeparator(in dirtyRect: NSRect) {}
-
-    override func drawSelection(in dirtyRect: NSRect) {
-        super.drawSelection(in: dirtyRect)
-
-        if isSelected == false {
-            NSColor.selectedControlColor.set()
-            __NSRectFill(dirtyRect)
-        } else {
-            backgroundColor.set()
-            __NSRectFill(dirtyRect)
+        init()
+        {
+            super.init(frame: .zero)
+            isTargetForDropOperation = false
+            draggingDestinationFeedbackStyle = .none
+            selectionHighlightStyle = .none
+        }
+        
+        required init?(coder decoder: NSCoder) { nil }
+        
+        override func drawBackground(in dirtyRect: NSRect) {} // this avoids a visual bug
+        override func drawSeparator(in dirtyRect: NSRect) {}
+        
+        override func drawSelection(in dirtyRect: NSRect) {
+            super.drawSelection(in: dirtyRect)
+            
+            if isSelected == false {
+                NSColor.selectedControlColor.set()
+                __NSRectFill(dirtyRect)
+            } else {
+                backgroundColor.set()
+                __NSRectFill(dirtyRect)
+            }
         }
     }
 }
-

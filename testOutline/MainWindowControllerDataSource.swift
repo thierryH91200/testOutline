@@ -19,7 +19,6 @@ extension MainWindowController: NSOutlineViewDataSource {
         if let feed = item as? Datas {
             return feed.children.count
         }
-        
         return 0
     }
     
@@ -52,4 +51,48 @@ extension MainWindowController: NSOutlineViewDataSource {
         }
         return false
     }
+    
+    /* When the outline view is saving the expanded items, this method is called for each expanded
+         item, to translate the outline view item to an archived object.
+     */
+// MARK: - EncodeExpansion
+    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+        
+        if let group = item as? Datas {
+            return (group.identifier)
+        }
+        return nil
+    }
+    
+    // MARK: - RestoreExpansion
+    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+        
+        if let identifier = object as? String {
+            let id = Int( identifier)!
+            if id < 1000 {
+                let item = nodeFromData(identifier: id, nodes: feeds)
+                return (item)
+            }
+        }
+        return nil
+    }
+    
+    // identifier must be unique
+    private func nodeFromData(identifier: Int, nodes: [Datas]) -> Datas? {
+        for node in nodes {
+            if Int(node.identifier) ==  identifier {
+                return node
+            }
+        }
+        return nil
+    }
+    
+//    private func nodeFromChildren(anObject: String, nodes: [Children]) -> Children? {
+//        for node in nodes {
+//            if node.identifier == anObject {
+//                return node
+//            }
+//        }
+//        return nil
+//    }
 }
