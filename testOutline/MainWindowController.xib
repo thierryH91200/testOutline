@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19150" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19150"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,17 +20,17 @@
             <rect key="contentRect" x="196" y="240" width="710" height="405"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" misplaced="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="710" height="376"/>
+                <rect key="frame" x="0.0" y="0.0" width="710" height="405"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Yq-L3X">
-                        <rect key="frame" x="0.0" y="0.0" width="710" height="318"/>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Yq-L3X">
+                        <rect key="frame" x="0.0" y="0.0" width="710" height="260"/>
                         <clipView key="contentView" id="5AT-Yz-q9m">
-                            <rect key="frame" x="1" y="1" width="708" height="316"/>
+                            <rect key="frame" x="1" y="1" width="708" height="258"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" emptySelection="NO" autosaveName="autoSave" rowHeight="24" rowSizeStyle="automatic" headerView="70s-AV-yw8" viewBased="YES" indentationPerLevel="13" autosaveExpandedItems="YES" outlineTableColumn="dad-NS-Tep" id="bq6-8o-dAw">
-                                    <rect key="frame" x="0.0" y="0.0" width="708" height="288"/>
+                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" emptySelection="NO" autosaveName="autoSave" rowSizeStyle="automatic" headerView="70s-AV-yw8" viewBased="YES" indentationPerLevel="13" autosaveExpandedItems="YES" outlineTableColumn="dad-NS-Tep" id="bq6-8o-dAw">
+                                    <rect key="frame" x="0.0" y="0.0" width="708" height="230"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="17" height="0.0"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

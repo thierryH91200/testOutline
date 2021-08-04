@@ -76,13 +76,13 @@ extension MainWindowController: NSOutlineViewDelegate {
         return cellView
     }
     
-    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        if isSourceGroupItem(item) == false {
-            return 24.0
-        } else {
-            return 30.0
-        }
-    }
+//    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
+//        if isSourceGroupItem(item) == false {
+//            return 14.0
+//        } else {
+//            return 18.0
+//        }
+//    }
     
 //    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
 //        return MyNSTableRowView()

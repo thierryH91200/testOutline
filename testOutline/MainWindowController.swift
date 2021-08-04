@@ -75,14 +75,15 @@ class MainWindowController: NSWindowController {
             }
         }
     }
-
     
+    override func keyDown(with theEvent: NSEvent) {
+      interpretKeyEvents([theEvent])
+    }
+
     override func deleteBackward(_ sender: Any?) {
         //1
         let selectedRow = outlineView.selectedRow
-        if selectedRow == -1 {
-            return
-        }
+        guard selectedRow != -1 else { return }
         
         outlineView.beginUpdates()
         if let item = outlineView.item(atRow: selectedRow) {
@@ -104,8 +105,7 @@ class MainWindowController: NSWindowController {
         }
         outlineView.endUpdates()
     }
-    
-    
+
 }
 
 // MARK: - KSHeaderCellView
