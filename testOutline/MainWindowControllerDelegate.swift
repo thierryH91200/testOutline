@@ -33,8 +33,8 @@ extension MainWindowController: NSOutlineViewDelegate {
         print (  folderItem.name)
         cellView?.textField?.stringValue = folderItem.name
         cellView?.textField?.textColor = .labelColor
-        cellView?.textField?.font = NSFont.boldSystemFont(ofSize: 14.0)
-        cellView?.fillColor = .orange
+//        cellView?.textField?.font = NSFont.boldSystemFont(ofSize: 14.0)
+        cellView?.fillColor = .green
 
         //        cellView?.textField?.sizeToFit()
         
@@ -63,26 +63,26 @@ extension MainWindowController: NSOutlineViewDelegate {
         {
         case .mode:
             textField.stringValue = item.mode
-            textField.sizeToFit()
+//            textField.sizeToFit()
             
         case .date:
             textField.stringValue = item.date
-            textField.sizeToFit()
+//            textField.sizeToFit()
             
         case .category:
             textField.stringValue = item.category
-            textField.sizeToFit()
+//            textField.sizeToFit()
         }
         return cellView
     }
     
-//    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-//        if isSourceGroupItem(item) == false {
-//            return 14.0
-//        } else {
-//            return 18.0
-//        }
-//    }
+    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
+        if isSourceGroupItem(item) == false {
+            return 16.0
+        } else {
+            return 18.0
+        }
+    }
     
 //    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
 //        return MyNSTableRowView()

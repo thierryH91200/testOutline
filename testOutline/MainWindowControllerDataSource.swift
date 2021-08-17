@@ -65,6 +65,7 @@ extension MainWindowController: NSOutlineViewDataSource {
     }
     
     // MARK: - RestoreExpansion
+    // Invoked by outlineView to return the item for the archived object.
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
         
         if let identifier = object as? String {

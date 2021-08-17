@@ -10,5 +10,4 @@ extension NSUserInterfaceItemIdentifier {
     static let FeedCell       = NSUserInterfaceItemIdentifier("FeedCell")
     static let FeedItemCell   = NSUserInterfaceItemIdentifier("FeedItemCell")
     static let FeedCat        = NSUserInterfaceItemIdentifier("FeedCat")
-
 }
