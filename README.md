@@ -21,6 +21,59 @@ When the outline view is saving the expanded items, this method is called for ea
 
 ## nstableview change isselected text color NSTableRowView
 
+### 1. Start with subclassing NSTableRowView
+
+class CategoryTableRowView: NSTableRowView {
+
+override func drawSelection(in dirtyRect: NSRect) {
+    if selectionHighlightStyle != .none {
+        let selectionRect = bounds.insetBy(dx: 2.5, dy: 2.5)
+        NSColor(calibratedRed: 61.0/255.0, green: 159.0/255.0, blue: 219.0/255.0, alpha: 1.0).setStroke()
+        NSColor(calibratedWhite: 1.0, alpha: 1.0).setFill()
+        let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 25, yRadius: 25)
+        selectionPath.fill()
+        selectionPath.stroke()
+    }
+  }
+}
+
+### 2. Return custom CategoryTableRowView() in the NSTableViewDelegate method
+
+func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+      return CategoryTableRowView()
+}
+
+### 3. Make sure you have selectionHighlightStyle to regular in your ViewController class
+
+override func viewDidLoad() {
+     super.viewDidLoad()
+     self.tableView.selectionHighlightStyle = .regular
+}
+
+### 4. To set the textColor, create a subclass of NSTableCellView
+
+class CategoryCellView: NSTableCellView {
+
+@IBOutlet weak var categoryTextField: NSTextField!
+
+override var backgroundStyle: NSView.BackgroundStyle {
+    willSet{
+        if newValue == .dark {
+            categoryTextField.textColor = NSColor(calibratedRed: 61.0/255.0, green: 159.0/255.0, blue: 219.0/255.0, alpha: 1.0)
+        } else {
+            categoryTextField.textColor = NSColor.black
+        }
+    }
+  }
+}
+override the backgroundStyle property and set the desired color for the text.
+
+Note: In my case, I have a custom cell which has a categoryTextField outlet.So to set the text color I use: categoryTextField.textColor = NSColor.black
+
+### 5. Set custom class inside storyboard
+
+
+
 <p align="center">
 <img src="Doc/Capture10.png" alt="Sample">
 <p align="center">

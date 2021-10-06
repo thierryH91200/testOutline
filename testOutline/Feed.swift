@@ -21,13 +21,13 @@ class Children     : Codable {
     var comment    : String
     var category   : String
     var identifier : String
+    var split      : [Split]
 }
 
 class Split        : Codable {
     var rubric     : String
     var amount     : String
 }
-
 
 extension Data {
     func decoded<T: Decodable>() throws -> T {

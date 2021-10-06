@@ -40,7 +40,7 @@ class CategoryCellView: NSTableCellView {
     
     var oldColor : NSColor? = nil
     var oldFont : NSFont? = nil
-
+    
     @IBOutlet weak var categoryTextField: NSTextField!
     
     override var backgroundStyle: NSView.BackgroundStyle {

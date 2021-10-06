@@ -13,7 +13,7 @@
 		<array>
 			<dict>
 				<key>comment</key>
-				<string>test</string>
+				<string>test0</string>
 				<key>identifier</key>
 				<string>1000</string>
 				<key>mode</key>
@@ -22,24 +22,69 @@
 				<string>2015-12-01</string>
 				<key>category</key>
 				<string>bank</string>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-02</string>
 				<key>identifier</key>
 				<string>1001</string>
 				<key>comment</key>
-				<string>test2</string>
+				<string>test1</string>
 				<key>category</key>
 				<string>food</string>
 				<key>mode</key>
 				<string>cash</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string></string>
+				<string>test2</string>
 				<key>identifier</key>
 				<string>1002</string>
 				<key>category</key>
@@ -48,6 +93,21 @@
 				<string>cash</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-05-15</string>
 				<key>mode</key>
@@ -71,6 +131,21 @@
 		<key>children</key>
 		<array>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
@@ -83,10 +158,25 @@
 				<string>bank</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string></string>
+				<string>test5</string>
 				<key>identifier</key>
 				<string>1005</string>
 				<key>mode</key>
@@ -95,10 +185,25 @@
 				<string>bank</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string></string>
+				<string>test6</string>
 				<key>identifier</key>
 				<string>1006</string>
 				<key>mode</key>
@@ -118,10 +223,25 @@
 		<key>children</key>
 		<array>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string>test4</string>
+				<string>test7</string>
 				<key>mode</key>
 				<string>cash</string>
 				<key>identifier</key>
@@ -130,10 +250,25 @@
 				<string>bank</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string></string>
+				<string>test8</string>
 				<key>identifier</key>
 				<string>1005</string>
 				<key>mode</key>
@@ -142,10 +277,25 @@
 				<string>bank</string>
 			</dict>
 			<dict>
+				<key>split</key>
+				<array>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>200</string>
+					</dict>
+					<dict>
+						<key>rubric</key>
+						<string>house</string>
+						<key>amount</key>
+						<string>100</string>
+					</dict>
+				</array>
 				<key>date</key>
 				<string>2015-12-03</string>
 				<key>comment</key>
-				<string></string>
+				<string>test9</string>
 				<key>identifier</key>
 				<string>1006</string>
 				<key>mode</key>

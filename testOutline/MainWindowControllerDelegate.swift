@@ -29,7 +29,6 @@ extension MainWindowController: NSOutlineViewDelegate {
         var cellView: KSHeaderCellView?
         
         cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? KSHeaderCellView
-            //        cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? NSTableCellView
         
         print (  folderItem.name)
         cellView?.textField?.stringValue = folderItem.name
@@ -72,6 +71,11 @@ extension MainWindowController: NSOutlineViewDelegate {
         case .category:
             textField?.stringValue = item.category
             textField?.textColor = NSColor.orange
+            
+        case .comment:
+            textField?.stringValue = item.comment
+            textField?.textColor = NSColor.yellow
+
         }
         return cellView
     }

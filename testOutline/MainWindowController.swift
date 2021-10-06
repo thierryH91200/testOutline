@@ -13,6 +13,7 @@ class MainWindowController: NSWindowController {
         case mode
         case date
         case category
+        case comment
     }
 
     @IBOutlet weak var outlineView: NSOutlineView!
