@@ -1,9 +1,9 @@
-//
-//  MainWindowControllerDelegate.swift
-//  testOutline
-//
-//  Created by thierryH24 on 30/07/2021.
-//
+    //
+    //  MainWindowControllerDelegate.swift
+    //  testOutline
+    //
+    //  Created by thierryH24 on 30/07/2021.
+    //
 
 import AppKit
 
@@ -29,67 +29,67 @@ extension MainWindowController: NSOutlineViewDelegate {
         var cellView: KSHeaderCellView?
         
         cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? KSHeaderCellView
-        //        cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? NSTableCellView
+            //        cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? NSTableCellView
+        
         print (  folderItem.name)
         cellView?.textField?.stringValue = folderItem.name
-        cellView?.textField?.textColor = .labelColor
-//        cellView?.textField?.font = NSFont.boldSystemFont(ofSize: 14.0)
-        cellView?.fillColor = .green
+        cellView?.textField?.textColor = .red
 
-        //        cellView?.textField?.sizeToFit()
-        
+        cellView?.fillColor = .green
         return cellView
     }
     
-    
     func trackingTransaction(_ outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: Children) -> NSView? {
         
-        var cellView: NSTableCellView?
+        var cellView: CategoryCellView?
         
         let identifier = tableColumn!.identifier
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
         
         if identifier.rawValue == "mode"
         {
-            cellView = outlineView.makeView(withIdentifier: .FeedItemCell, owner: self) as? NSTableCellView
+            cellView = outlineView.makeView(withIdentifier: .FeedItemCell, owner: self) as? CategoryCellView
         } else
         {
-            cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? NSTableCellView
+            cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? CategoryCellView
         }
-        let textField = (cellView?.textField!)!
-        textField.stringValue = ""
+        
+        let textField = (cellView?.categoryTextField!)
+        
+        textField?.stringValue = ""
+        textField?.textColor = NSColor.blue
         
         switch propertyEnum
         {
         case .mode:
-            textField.stringValue = item.mode
-//            textField.sizeToFit()
-            
+            textField?.stringValue = item.mode
+            textField?.textColor = NSColor.blue
+
         case .date:
-            textField.stringValue = item.date
-//            textField.sizeToFit()
-            
+            textField?.stringValue = item.date
+            textField?.textColor = NSColor.green
+
         case .category:
-            textField.stringValue = item.category
-//            textField.sizeToFit()
+            textField?.stringValue = item.category
+            textField?.textColor = NSColor.orange
         }
         return cellView
     }
     
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         if isSourceGroupItem(item) == false {
-            return 16.0
+            return 12.0
         } else {
-            return 18.0
+            return 14.0
         }
     }
     
-//    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
-//        return MyNSTableRowView()
-//    }
-
+    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
+        return MyNSTableRowView()
+    }
     
-    // Returns a Boolean that indicates whether a given row should be drawn in the “group row” style.
+    
+        // Returns a Boolean that indicates whether a given row should be drawn in the “group row” style.
     public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
     {
         if item is Datas {
@@ -98,34 +98,12 @@ extension MainWindowController: NSOutlineViewDelegate {
         return false
     }
     
-    // MARK: -
-    class MyNSTableRowView: NSTableRowView {
-        
-        static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
+    func outlineViewSelectionDidChange(_ aNotification: Notification) {
     
-        init()
-        {
-            super.init(frame: .zero)
-            isTargetForDropOperation = false
-            draggingDestinationFeedbackStyle = .none
-            selectionHighlightStyle = .none
-        }
-        
-        required init?(coder decoder: NSCoder) { nil }
-        
-        override func drawBackground(in dirtyRect: NSRect) {} // this avoids a visual bug
-        override func drawSeparator(in dirtyRect: NSRect) {}
-        
-        override func drawSelection(in dirtyRect: NSRect) {
-            super.drawSelection(in: dirtyRect)
-            
-            if isSelected == false {
-                NSColor.selectedControlColor.set()
-                __NSRectFill(dirtyRect)
-            } else {
-                backgroundColor.set()
-                __NSRectFill(dirtyRect)
-            }
-        }
+        let selectedRow = outlineView.selectedRow
+        let myRowView = outlineView.rowView(atRow: selectedRow, makeIfNecessary: false)
+        myRowView?.isEmphasized = false
     }
+
 }
+

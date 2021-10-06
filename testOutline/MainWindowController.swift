@@ -30,13 +30,19 @@ class MainWindowController: NSWindowController {
         dateFormatter.dateStyle = .short
         
         feedList("Feeds")
+        
+        self.outlineView.intercellSpacing = NSSize(width: 0, height: 10)
+//        self.outlineView.selectionHighlightStyle = .none
+        self.outlineView.selectionHighlightStyle = .regular
 
-        self.outlineView.autosaveTableColumns = false
+
+        self.outlineView.autosaveTableColumns = true
+
         self.outlineView.autosaveExpandedItems = false
         outlineView.reloadData()
         self.outlineView.autosaveExpandedItems = true
         
-        reloadData(false, true)
+        self.reloadData(false, true)
     }
     
     func feedList(_ fileName: String) {
@@ -105,7 +111,6 @@ class MainWindowController: NSWindowController {
         }
         outlineView.endUpdates()
     }
-
 }
 
 // MARK: - KSHeaderCellView
@@ -120,3 +125,5 @@ final class KSHeaderCellView: NSTableCellView {
         bPath.fill()
     }
 }
+
+
