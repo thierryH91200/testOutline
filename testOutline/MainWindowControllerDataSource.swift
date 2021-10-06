@@ -19,6 +19,10 @@ extension MainWindowController: NSOutlineViewDataSource {
         if let feed = item as? Datas {
             return feed.children.count
         }
+        
+        if let feed = item as? Children {
+            return feed.split.count
+        }
         return 0
     }
     
@@ -32,7 +36,10 @@ extension MainWindowController: NSOutlineViewDataSource {
         if let feed = item as? Datas {
             return feed.children[index]
         }
-        
+        if let feed = item as? Children {
+            return feed.split[index]
+        }
+
         return "child index : BAD ITEM"
         
     }
@@ -47,6 +54,9 @@ extension MainWindowController: NSOutlineViewDataSource {
             return true
         }
         if item is Children {
+            return true
+        }
+        if item is Split {
             return false
         }
         return false

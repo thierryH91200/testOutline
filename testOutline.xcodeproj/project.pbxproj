@@ -129,12 +129,12 @@
 				0388572726ADCBBE0011505D /* MainMenu.xib */,
 				0388575126ADCE810011505D /* Feeds.plist */,
 				0388575326ADCE9B0011505D /* Feed.swift */,
-				0388575726ADE9620011505D /* NSUserInterfaceItemIdentifier.swift */,
 				0388574D26ADCC0E0011505D /* MainWindowController.swift */,
 				0388574E26ADCC0E0011505D /* MainWindowController.xib */,
 				0309F60D26B3E68800341330 /* MainWindowControllerDataSource.swift */,
 				0309F60F26B3E85A00341330 /* MainWindowControllerDelegate.swift */,
 				03B828A1270DE3DF009DB994 /* MainWindowToolBar.swift */,
+				0388575726ADE9620011505D /* NSUserInterfaceItemIdentifier.swift */,
 				037DFB8C270998B400C3EBB5 /* Extension.swift */,
 			);
 			path = testOutline;

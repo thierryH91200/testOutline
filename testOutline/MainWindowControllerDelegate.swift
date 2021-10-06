@@ -21,6 +21,9 @@ extension MainWindowController: NSOutlineViewDelegate {
         if let feedItem = item as? Children {
             return trackingTransaction ( outlineView, tableColumn: tableColumn, item: feedItem)
         }
+        if let feedItem = item as? Split {
+            return trackingSplit ( outlineView, tableColumn: tableColumn, item: feedItem)
+        }
         return nil
     }
     
@@ -75,7 +78,6 @@ extension MainWindowController: NSOutlineViewDelegate {
         case .comment:
             textField?.stringValue = item.comment
             textField?.textColor = NSColor.yellow
-
         }
         return cellView
     }
@@ -88,6 +90,43 @@ extension MainWindowController: NSOutlineViewDelegate {
         }
     }
     
+    func trackingSplit(_ outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: Split) -> NSView? {
+        
+        var cellView: CategoryCellView?
+        
+        let identifier = tableColumn!.identifier
+        guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
+        
+        if identifier.rawValue == "mode"
+        {
+            cellView = outlineView.makeView(withIdentifier: .FeedItemCell, owner: self) as? CategoryCellView
+        } else
+        {
+            cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? CategoryCellView
+        }
+        
+        let textField = (cellView?.categoryTextField!)
+        
+        textField?.stringValue = ""
+        textField?.textColor = NSColor.blue
+        
+        switch propertyEnum
+        {
+        case .mode:
+            textField?.stringValue = item.rubric
+            textField?.textColor = NSColor.red
+
+        case .date:
+            textField?.stringValue = item.amount
+            textField?.textColor = NSColor.purple
+
+        default:
+            textField?.stringValue = "default"
+            textField?.textColor = NSColor.yellow
+        }
+        return cellView
+    }
+
     func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
         return MyNSTableRowView()
     }

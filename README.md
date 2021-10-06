@@ -77,21 +77,21 @@ Note: In my case, I have a custom cell which has a categoryTextField outlet.So t
 <p align="center">
 <img src="Doc/Capture10.png" alt="Sample">
 <p align="center">
-<em>DarkMode</em> 
+<em>Normal</em> 
 </p>
 </p>
 
 <p align="center">
 <img src="Doc/Capture20.png" alt="Sample">
 <p align="center">
-<em>DarkMode</em> 
+<em>Select light</em> 
 </p>
 </p>
 
 <p align="center">
 <img src="Doc/Capture30.png" alt="Sample">
 <p align="center">
-<em>DarkMode</em> 
+<em>Select dark</em> 
 </p>
 </p>
 
