@@ -23,6 +23,7 @@ When the outline view is saving the expanded items, this method is called for ea
 
 ## 1. Start with subclassing NSTableRowView
 
+```swift
 class CategoryTableRowView: NSTableRowView {
 
 override func drawSelection(in dirtyRect: NSRect) {
@@ -36,6 +37,7 @@ override func drawSelection(in dirtyRect: NSRect) {
     }
   }
 }
+```
 
 ## 2. Return custom CategoryTableRowView() in the NSTableViewDelegate method
 
@@ -50,7 +52,7 @@ func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowVi
 ```swift
 override func viewDidLoad() {
      super.viewDidLoad()
-     self.tableView.selectionHighlightStyle = .regular
+     self.outlineView.selectionHighlightStyle = .regular
 }
 ```
 
@@ -85,7 +87,6 @@ override the backgroundStyle property and set the desired color for the text.
     }
 } 
 ```
-
 
 Note: In my case, I have a custom cell which has a categoryTextField outlet.So to set the text color I use: categoryTextField.textColor = NSColor.textColor
 
