@@ -43,6 +43,7 @@ override func drawSelection(in dirtyRect: NSRect) {
 func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
       return CategoryTableRowView()
 }
+```
 
 ## 3. Make sure you have selectionHighlightStyle to regular in your ViewController class
 
