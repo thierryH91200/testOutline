@@ -39,6 +39,7 @@ override func drawSelection(in dirtyRect: NSRect) {
 
 ## 2. Return custom CategoryTableRowView() in the NSTableViewDelegate method
 
+```swift
 func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
       return CategoryTableRowView()
 }
