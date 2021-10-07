@@ -5,10 +5,11 @@
     //  Created by thierryH24 on 03/10/2021.
     //
 
-import Cocoa
+import AppKit
 
 
     // MARK: - NSTableRowView
+
 class MyNSTableRowView: NSTableRowView {
     
     override func drawSelection(in dirtyRect: NSRect) {
