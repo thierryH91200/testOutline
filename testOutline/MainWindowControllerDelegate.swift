@@ -33,7 +33,6 @@ extension MainWindowController: NSOutlineViewDelegate {
         
         cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? KSHeaderCellView
         
-        print (  folderItem.name)
         cellView?.textField?.stringValue = folderItem.name
         cellView?.textField?.textColor = .red
 
@@ -56,7 +55,7 @@ extension MainWindowController: NSOutlineViewDelegate {
             cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? CategoryCellView
         }
         
-        let textField = (cellView?.categoryTextField!)
+        let textField = (cellView?.textField!)
         
         textField?.stringValue = ""
         textField?.textColor = NSColor.blue
@@ -105,7 +104,7 @@ extension MainWindowController: NSOutlineViewDelegate {
             cellView = outlineView.makeView(withIdentifier: identifier, owner: self) as? CategoryCellView
         }
         
-        let textField = (cellView?.categoryTextField!)
+        let textField = (cellView?.textField!)
         
         textField?.stringValue = ""
         textField?.textColor = NSColor.blue
@@ -121,8 +120,8 @@ extension MainWindowController: NSOutlineViewDelegate {
             textField?.textColor = NSColor.purple
 
         default:
-            textField?.stringValue = "default"
-            textField?.textColor = NSColor.yellow
+            textField?.stringValue = ""
+            textField?.textColor = NSColor.clear
         }
         return cellView
     }
@@ -130,7 +129,6 @@ extension MainWindowController: NSOutlineViewDelegate {
     func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
         return MyNSTableRowView()
     }
-    
     
         // Returns a Boolean that indicates whether a given row should be drawn in the “group row” style.
     public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool

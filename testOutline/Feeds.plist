@@ -27,12 +27,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>10000</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>10001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -44,12 +48,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>20000</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>20001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -71,12 +79,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30000</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -98,12 +110,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -136,12 +152,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -153,7 +173,7 @@
 				<key>mode</key>
 				<string>cash</string>
 				<key>identifier</key>
-				<string>1004</string>
+				<string>2000</string>
 				<key>category</key>
 				<string>bank</string>
 			</dict>
@@ -163,12 +183,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -178,7 +202,7 @@
 				<key>comment</key>
 				<string>test5</string>
 				<key>identifier</key>
-				<string>1005</string>
+				<string>2001</string>
 				<key>mode</key>
 				<string>cash</string>
 				<key>category</key>
@@ -190,12 +214,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -205,7 +233,7 @@
 				<key>comment</key>
 				<string>test6</string>
 				<key>identifier</key>
-				<string>1006</string>
+				<string>2002</string>
 				<key>mode</key>
 				<string>cash</string>
 				<key>category</key>
@@ -228,12 +256,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -245,7 +277,7 @@
 				<key>mode</key>
 				<string>cash</string>
 				<key>identifier</key>
-				<string>1004</string>
+				<string>3000</string>
 				<key>category</key>
 				<string>bank</string>
 			</dict>
@@ -255,12 +287,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -270,7 +306,7 @@
 				<key>comment</key>
 				<string>test8</string>
 				<key>identifier</key>
-				<string>1005</string>
+				<string>3001</string>
 				<key>mode</key>
 				<string>cash</string>
 				<key>category</key>
@@ -282,12 +318,16 @@
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>200</string>
 					</dict>
 					<dict>
 						<key>rubric</key>
 						<string>house</string>
+						<key>identifier</key>
+						<string>30001</string>
 						<key>amount</key>
 						<string>100</string>
 					</dict>
@@ -297,7 +337,7 @@
 				<key>comment</key>
 				<string>test9</string>
 				<key>identifier</key>
-				<string>1006</string>
+				<string>3002</string>
 				<key>mode</key>
 				<string>cash</string>
 				<key>category</key>

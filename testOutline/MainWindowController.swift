@@ -33,9 +33,7 @@ class MainWindowController: NSWindowController {
         feedList("Feeds")
         
         self.outlineView.intercellSpacing = NSSize(width: 0, height: 10)
-//        self.outlineView.selectionHighlightStyle = .none
         self.outlineView.selectionHighlightStyle = .regular
-
 
         self.outlineView.autosaveTableColumns = true
 
