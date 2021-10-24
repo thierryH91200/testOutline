@@ -41,14 +41,13 @@ class CategoryCellView: NSTableCellView {
     
     var oldColor : NSColor? = nil
     var oldFont : NSFont? = nil
-    
-//    @IBOutlet weak var categoryTextField: NSTextField!
-    
+       
     override var backgroundStyle: NSView.BackgroundStyle {
         willSet{
             if newValue == .emphasized {
-                textField?.font = NSFont.boldSystemFont(ofSize: 14)
-                textField?.textColor = NSColor.textColor
+                textField?.font = NSFont.systemFont(ofSize: 14)
+//                textField?.font = NSFont.boldSystemFont(ofSize: 14)
+                textField?.textColor = NSColor.labelColor
             } else {
                 if oldColor == nil {
                     oldColor = textField?.textColor!

@@ -1,9 +1,9 @@
-//
-//  MainWindowController.swift
-//  testOutline
-//
-//  Created by thierryH24 on 25/07/2021.
-//
+    //
+    //  MainWindowController.swift
+    //  testOutline
+    //
+    //  Created by thierryH24 on 25/07/2021.
+    //
 
 import Cocoa
 
@@ -15,7 +15,7 @@ class MainWindowController: NSWindowController {
         case category
         case comment
     }
-
+    
     @IBOutlet weak var outlineView: NSOutlineView!
     
     var feeds = [Datas]()
@@ -34,9 +34,9 @@ class MainWindowController: NSWindowController {
         
         self.outlineView.intercellSpacing = NSSize(width: 0, height: 10)
         self.outlineView.selectionHighlightStyle = .regular
-
+        
         self.outlineView.autosaveTableColumns = true
-
+        
         self.outlineView.autosaveExpandedItems = false
         outlineView.reloadData()
         self.outlineView.autosaveExpandedItems = true
@@ -49,6 +49,16 @@ class MainWindowController: NSWindowController {
         let url = Bundle.main.url(forResource: fileName, withExtension: "plist")!
         let data = try! Data(contentsOf: url)
         feeds = try! data.decoded()
+//        for datas in feeds
+//        {
+//            datas.identifier = UUID()
+//            for child in datas.children {
+//                child.identifier = UUID()
+//                for split in child.split {
+//                    split.identifier = UUID()
+//                }
+//            }
+//        }
     }
     
     func reloadData(_ expand: Bool = false,_ auto: Bool = false) {
@@ -57,7 +67,7 @@ class MainWindowController: NSWindowController {
             self.outlineView.autosaveExpandedItems = false
             self.outlineView.reloadData()
             self.outlineView.autosaveExpandedItems = auto
-
+            
             if expand == true {
                 self.outlineView.expandItem(nil, expandChildren: true)
                 return
@@ -73,20 +83,20 @@ class MainWindowController: NSWindowController {
                     if let item = item as? Datas {
                         self.outlineView.expandItem(item)
                     }
-//                    if let item = item as? GroupedMonthOperations {
-//                        self.outlineListView.expandItem(item)
-//                    }
+                        //                    if let item = item as? GroupedMonthOperations {
+                        //                        self.outlineListView.expandItem(item)
+                        //                    }
                 }
             }
         }
     }
     
     override func keyDown(with theEvent: NSEvent) {
-      interpretKeyEvents([theEvent])
+        interpretKeyEvents([theEvent])
     }
-
+    
     override func deleteBackward(_ sender: Any?) {
-        //1
+            //1
         let selectedRow = outlineView.selectedRow
         guard selectedRow != -1 else { return }
         
@@ -112,7 +122,7 @@ class MainWindowController: NSWindowController {
     }
 }
 
-// MARK: - KSHeaderCellView
+    // MARK: - KSHeaderCellView
 final class KSHeaderCellView: NSTableCellView {
     
     var fillColor = NSColor.orange

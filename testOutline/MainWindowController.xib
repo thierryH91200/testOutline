@@ -288,7 +288,7 @@
                         <nil key="toolTip"/>
                         <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
                         <button key="view" verticalHuggingPriority="750" id="d0V-1H-vOr">
-                            <rect key="frame" x="0.0" y="14" width="20.5" height="17"/>
+                            <rect key="frame" x="0.0" y="14.5" width="21.5" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="ttG-tT-eio">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -327,6 +327,9 @@
                                     <segment label="Dark" tag="1"/>
                                 </segments>
                             </segmentedCell>
+                            <connections>
+                                <action selector="appearanceSelection:" target="-1" id="UcE-Ii-tcX"/>
+                            </connections>
                         </segmentedControl>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="3I9-Ec-OsM"/>

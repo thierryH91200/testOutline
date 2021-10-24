@@ -86,14 +86,7 @@ class CategoryCellView: NSTableCellView {
 }
 ```
 
-Note: In my case, I have a custom cell which has a categoryTextField outlet.So to set the text color I use: 
-```swift
-textField.textColor = NSColor.textColor
-```
-
 ## 5. Set custom class inside storyboard
-
-
 
 <p align="center">
 <img src="Doc/Capture10.png" alt="Sample">
