@@ -33,8 +33,9 @@ extension MainWindowController: NSOutlineViewDelegate {
         
         cellView = outlineView.makeView(withIdentifier: .FeedCell, owner: self) as? KSHeaderCellView
         
-        cellView?.textField?.stringValue = folderItem.name
-        cellView?.textField?.textColor = .red
+        cellView?.textField?.font = NSFont(name:"Arial", size: 32)
+        cellView?.textField?.stringValue = folderItem.name + " " + folderItem.amount
+        cellView?.textField?.textColor = .textColor
 
         cellView?.fillColor = .green
         return cellView
@@ -82,11 +83,14 @@ extension MainWindowController: NSOutlineViewDelegate {
     }
     
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        if isSourceGroupItem(item) == false {
-            return 12.0
-        } else {
-            return 14.0
+        if outlineView == self.testOutlineView {
+            if isSourceGroupItem(item) == false {
+                return 14.0
+            } else {
+                return 16.0
+            }
         }
+        return 10.0
     }
     
     func trackingSplit(_ outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: Split) -> NSView? {
@@ -141,9 +145,11 @@ extension MainWindowController: NSOutlineViewDelegate {
     
     func outlineViewSelectionDidChange(_ aNotification: Notification) {
     
-        let selectedRow = outlineView.selectedRow
-        let myRowView = outlineView.rowView(atRow: selectedRow, makeIfNecessary: false)
-        myRowView?.isEmphasized = false
+        let selectedRow = testOutlineView.selectedRow
+        if selectedRow != -1 { // else crash
+            let myRowView = testOutlineView.rowView(atRow: selectedRow, makeIfNecessary: false)
+            myRowView?.isEmphasized = false
+        }
     }
 
 }

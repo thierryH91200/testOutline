@@ -28,6 +28,7 @@ class Split        : Codable {
     var rubric     : String
     var amount     : String
     var identifier : String
+
 }
 
 extension Data {

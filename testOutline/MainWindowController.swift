@@ -1,9 +1,9 @@
-    //
-    //  MainWindowController.swift
-    //  testOutline
-    //
-    //  Created by thierryH24 on 25/07/2021.
-    //
+//
+//  MainWindowController.swift
+//  testOutline
+//
+//  Created by thierryH24 on 25/07/2021.
+//
 
 import Cocoa
 
@@ -15,8 +15,8 @@ class MainWindowController: NSWindowController {
         case category
         case comment
     }
-    
-    @IBOutlet weak var outlineView: NSOutlineView!
+
+    @IBOutlet weak var testOutlineView: NSOutlineView!
     
     var feeds = [Datas]()
     let dateFormatter = DateFormatter()
@@ -32,14 +32,13 @@ class MainWindowController: NSWindowController {
         
         feedList("Feeds")
         
-        self.outlineView.intercellSpacing = NSSize(width: 0, height: 10)
-        self.outlineView.selectionHighlightStyle = .regular
-        
-        self.outlineView.autosaveTableColumns = true
-        
-        self.outlineView.autosaveExpandedItems = false
-        outlineView.reloadData()
-        self.outlineView.autosaveExpandedItems = true
+        self.testOutlineView.intercellSpacing = NSSize(width: 0, height: 10)
+        self.testOutlineView.selectionHighlightStyle = .regular
+//        self.outlineView?.usesAutomaticRowHeights = true
+               
+        self.testOutlineView.autosaveExpandedItems = false
+        testOutlineView.reloadData()
+        self.testOutlineView.autosaveExpandedItems = true
         
         self.reloadData(false, true)
     }
@@ -49,80 +48,70 @@ class MainWindowController: NSWindowController {
         let url = Bundle.main.url(forResource: fileName, withExtension: "plist")!
         let data = try! Data(contentsOf: url)
         feeds = try! data.decoded()
-//        for datas in feeds
-//        {
-//            datas.identifier = UUID()
-//            for child in datas.children {
-//                child.identifier = UUID()
-//                for split in child.split {
-//                    split.identifier = UUID()
-//                }
-//            }
-//        }
     }
     
     func reloadData(_ expand: Bool = false,_ auto: Bool = false) {
         
         DispatchQueue.main.async {
-            self.outlineView.autosaveExpandedItems = false
-            self.outlineView.reloadData()
-            self.outlineView.autosaveExpandedItems = auto
-            
+            self.testOutlineView.autosaveExpandedItems = false
+            self.testOutlineView.reloadData()
+            self.testOutlineView.autosaveExpandedItems = auto
+
             if expand == true {
-                self.outlineView.expandItem(nil, expandChildren: true)
+                self.testOutlineView.expandItem(nil, expandChildren: true)
                 return
             }
             
-            if self.outlineView.autosaveExpandedItems,
-               let autosaveName = self.outlineView.autosaveName,
+            if self.testOutlineView.autosaveExpandedItems,
+               let autosaveName = self.testOutlineView.autosaveName,
                let persistentObjects = UserDefaults.standard.array(forKey: "NSOutlineView Items \(autosaveName)"),
                let itemIds = persistentObjects as? [String] {
                 let items = itemIds.sorted{ $0 < $1}
                 items.forEach {
-                    let item = self.outlineView.dataSource?.outlineView?(self.outlineView, itemForPersistentObject: $0)
+                    let item = self.testOutlineView.dataSource?.outlineView?(self.testOutlineView, itemForPersistentObject: $0)
                     if let item = item as? Datas {
-                        self.outlineView.expandItem(item)
+                        self.testOutlineView.expandItem(item)
                     }
-                        //                    if let item = item as? GroupedMonthOperations {
-                        //                        self.outlineListView.expandItem(item)
-                        //                    }
+//                    if let item = item as? GroupedMonthOperations {
+//                        self.outlineListView.expandItem(item)
+//                    }
                 }
             }
         }
     }
     
     override func keyDown(with theEvent: NSEvent) {
-        interpretKeyEvents([theEvent])
+      interpretKeyEvents([theEvent])
     }
-    
+
     override func deleteBackward(_ sender: Any?) {
-            //1
-        let selectedRow = outlineView.selectedRow
+        //1
+        let selectedRow = testOutlineView.selectedRow
         guard selectedRow != -1 else { return }
         
-        outlineView.beginUpdates()
-        if let item = outlineView.item(atRow: selectedRow) {
+        testOutlineView.beginUpdates()
+        if let item = testOutlineView.item(atRow: selectedRow) {
             
             if let item = item as? Datas {
                 if let index = self.feeds.firstIndex( where: {$0.name == item.name} ) {
                     self.feeds.remove(at: index)
-                    outlineView.removeItems(at: IndexSet(integer: selectedRow), inParent: nil, withAnimation: .slideLeft)
+                    testOutlineView.removeItems(at: IndexSet(integer: selectedRow), inParent: nil, withAnimation: .slideLeft)
                 }
             } else if let item = item as? Children {
                 for feed in self.feeds {
                     let feed = feed
                     if let index = feed.children.firstIndex( where: {$0.mode == item.mode} ) {
                         feed.children.remove(at: index)
-                        outlineView.removeItems(at: IndexSet(integer: index), inParent: feed, withAnimation: .slideLeft)
+                        testOutlineView.removeItems(at: IndexSet(integer: index), inParent: feed, withAnimation: .slideLeft)
                     }
                 }
             }
         }
-        outlineView.endUpdates()
+        testOutlineView.endUpdates()
     }
 }
 
-    // MARK: - KSHeaderCellView
+// MARK: - KSHeaderCellView
 final class KSHeaderCellView: NSTableCellView {
     
     var fillColor = NSColor.orange

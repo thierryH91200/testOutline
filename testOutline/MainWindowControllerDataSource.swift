@@ -1,9 +1,9 @@
-//
-//  MainWindowControllerDataSource.swift
-//  testOutline
-//
-//  Created by thierryH24 on 30/07/2021.
-//
+    //
+    //  MainWindowControllerDataSource.swift
+    //  testOutline
+    //
+    //  Created by thierryH24 on 30/07/2021.
+    //
 
 import AppKit
 
@@ -15,7 +15,7 @@ extension MainWindowController: NSOutlineViewDataSource {
         if item == nil {
             return feeds.count
         }
-
+        
         if let feed = item as? Datas {
             return feed.children.count
         }
@@ -29,17 +29,16 @@ extension MainWindowController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         
         if item == nil {
-            let feed = feeds[index]
-            return feed
+            return feeds[index]
         }
-
+        
         if let feed = item as? Datas {
             return feed.children[index]
         }
         if let feed = item as? Children {
             return feed.split[index]
         }
-
+        
         return "child index : BAD ITEM"
         
     }
@@ -63,44 +62,39 @@ extension MainWindowController: NSOutlineViewDataSource {
     }
     
     /* When the outline view is saving the expanded items, this method is called for each expanded
-         item, to translate the outline view item to an archived object.
+     item, to translate the outline view item to an archived object.
      */
-// MARK: - EncodeExpansion
+        // MARK: - EncodeExpansion
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
-        
+
         if let group = item as? Datas {
             return (group.identifier)
         }
         return nil
     }
-    
-    // MARK: - RestoreExpansion
-    // Invoked by outlineView to return the item for the archived object.
+
+        // MARK: - RestoreExpansion
+        // Invoked by outlineView to return the item for the archived object.
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
-        
+
         if let identifier = object as? String {
-            let id = Int( identifier)!
-            if id < 1000 {
-                let item = nodeFromData(identifier: id, nodes: feeds)
-                return (item)
-            }
+            let node = nodeFromData(identifier: identifier, nodes: feeds)
+            return (node)
         }
         return nil
     }
     
-    // identifier must be unique
-    private func nodeFromData(identifier: Int, nodes: [Datas]) -> Datas? {
-        for node in nodes {
-            if Int(node.identifier) ==  identifier {
-                return node
-            }
+        // identifier must be unique
+    private func nodeFromData(identifier: String, nodes: [Datas]) -> Datas? {
+        for node in nodes where node.identifier ==  identifier {
+            return node
         }
         return nil
     }
     
-//    private func nodeFromChildren(anObject: String, nodes: [Children]) -> Children? {
+//    private func nodeFromChildren(identifier: String, nodes: [Children]) -> Children? {
 //        for node in nodes {
-//            if node.identifier == anObject {
+//            if node.identifier == identifier {
 //                return node
 //            }
 //        }
